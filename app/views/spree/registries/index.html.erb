@@ -1,0 +1,8 @@
+<h1 class="row"><%= Spree.t(:registries) %></h1>
+<%= content_tag :ul do %>
+  <% @registries.each do |registry| %>
+    <%= content_tag :li do %>
+      <%= link_to(registry.name, registry) %> - <%= registry.is_private ? Spree.t(:private) : Spree.t(:public) %>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,31 @@
+---
+sv:
+  spree:
+    add_to_registry: "Lägg till i önskelistan"
+    are_you_sure_registry: "Är du säker på att du vill ta bort denna önskelista?"
+    availability: Tillgänglighet
+    create_new_registry: "Skapa nytt önskelista"
+    creating_registry: "Skapa önskelista"
+    date_added: "Datum tillagd"
+    delete_registry: "Ta bort önskelista"
+    edit_registry: "Redigera önskelista"
+    editing_registry: "Redigerar önskelistan"
+    in_stock: "I lager"
+    is_default: "Är standard"
+    is_private: "Är privat"
+    item_view: Visa
+    move: Flytta
+    move_to_another_registry: "Flytta till en annan önskelista"
+    my_registries: "Mina önskelistor"
+    private_registry: "Privat önskelista"
+    private: Privat
+    public_registry: "Offentlig önskelista"
+    public: Offentlig
+    remove_from_registry: "Ta bort från önskelistan"
+    registry_actions: Åtgärder
+    your_registry_is_empty: "Din önskelista är tom"
+    update_quantity: "Uppdatera antal"
+    item_added_to_registry: "Objekt har lagts till i önskelistan"
+    default_registry_name: "Önskelista"
+    take_a_look_at_my_registry: "Vänligen, ta en titt på min önskelista:"
+    click_link_to_view_registry: "Klicka på länken nedan för att läsa %{name} sidan."

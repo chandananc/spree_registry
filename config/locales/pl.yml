@@ -1,0 +1,31 @@
+---
+pl:
+  spree:
+    add_to_registry: "Dodaj do listy życzeń"
+    are_you_sure_registry: "Czy na pewno chesz usunąć listę życzeń?"
+    availability: "Dostępność"
+    create_new_registry: "Utwórz nową listę życzeń."
+    creating_registry: "Tworzenie listy życzeń"
+    date_added: "Data dodana"
+    delete_registry: "Usuń listę życzeń"
+    edit_registry: "Edytuj listę życzeń"
+    editing_registry: "Edycja listy życzeń"
+    in_stock: "Dostępny"
+    is_default: "domyślny"
+    is_private: "prywatny"
+    item_view: "Widok"
+    move: Przenieś
+    move_to_another_registry: Przenieś do innej listy
+    my_registries: Moje listy życzeń
+    private_registry: Prywatna
+    private: Prywatna
+    public_registry: Publiczna
+    public: Publiczna
+    remove_from_registry: Usuń z listy życzeń
+    registry_actions: Akcje
+    your_registry_is_empty: Twoja lista życzeń jest pusta
+    update_quantity: Przelicz
+    item_added_to_registry: Dodano produkt do listy życzeń
+    default_registry_name: "Listę życzeń"
+    take_a_look_at_my_registry: "Prosimy zapoznać się z listy życzeń:"
+    click_link_to_view_registry: "Kliknij poniższy link, aby zobaczyć %{name} stronę."

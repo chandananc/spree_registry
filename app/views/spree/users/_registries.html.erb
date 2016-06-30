@@ -1,0 +1,8 @@
+<h3><%= Spree.t(:my_registries) %></h3>
+<ul>
+<% @user.registries.each do |rl| %>
+  <% if !rl.is_private? || @user == spree_current_user %>
+  <li><%= link_to rl.name, rl %></li>
+  <% end -%>
+<% end -%>
+</ul>

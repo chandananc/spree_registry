@@ -1,0 +1,97 @@
+<div id="registry_header">
+  <h1><%= @registry.name %></h1>
+  <% if @registry.user == spree_current_user %>
+    <div id="manage_registry_links">
+      <%= link_to Spree.t(:edit_registry), edit_registry_path(@registry), class: 'button' %>
+    </div>
+    <div><%= render partial: 'accessibility' %></div>
+  <% end -%>
+</div>
+<table id="registry" class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <% if @registry.user == spree_current_user %>
+        <th><%= Spree.t(:registry_actions) %></th>
+      <% end -%>
+      <th><%= Spree.t(:item_view) %></th>
+      <th><%= Spree.t(:item_description) %></th>
+      <th><%= Spree.t(:availability) %></th>
+      <th><%= Spree.t(:date_added) %></th>
+      <th><%= Spree.t(:price) %></th>
+      <th><%= Spree.t(:quantity) %></th>
+      <th><%= Spree.t(:total) %></th>
+    </tr>
+  </thead>
+  <tbody id="line_items">
+  <% if @registry.registryed_products.size > 0 %>
+    <% @registry.registryed_products.each do |registry|
+        variant = registry.variant
+        product = variant.product %>
+    <tr class="<%= cycle('', 'alt') %>">
+    <% if @registry.user == spree_current_user %>
+      <td>
+        <p><%= link_to Spree.t(:remove_from_registry), registry, method: :delete, class: 'btn btn-danger' %></p>
+        <%= form_for :order, url: populate_orders_url do |f| %>
+          <%= hidden_field_tag 'variant_id', variant.id, size: 3 %>
+          <%= Spree.t(:quantity) %>
+          <%= number_field_tag 'quantity', registry.quantity, size: 3 %>
+          <%= link_to Spree.t(:add_to_cart), '#', onclick: '$(this).parent().submit(); return false;', class: 'btn btn-success' %>
+        <% end %>
+        <% if spree_current_user.registries.count > 1 %>
+          <%= Spree.t(:move_to_another_registry) %>:
+          <%= form_for registry do |f| %>
+            <%= f.select :registry_id, spree_current_user.registries.map{|wl| [wl.name, wl.id]} %>
+            <%= f.submit Spree.t(:move), class: 'btn btn-default' %>
+          <% end %>
+        <% end %>
+        <br />
+      </td>
+    <% end -%>
+      <td>
+        <% if variant.images.length == 0 %>
+          <%= small_image(variant.product) %>
+        <% else %>
+          <%= image_tag variant.images.first.attachment.url(:small) %>
+        <% end %>
+      </td>
+      <td>
+        <h4><%= link_to product.name, product %></h4>
+        <p><%= variant_options variant %></p>
+        <%= truncate(strip_tags(product.description), length: 100, omission: '...') %>
+      </td>
+      <td>
+        <%= variant.can_supply? ? Spree.t(:in_stock) : Spree.t(:out_of_stock) %>
+      </td>
+      <td>
+        <%= registry.created_at.strftime '%m/%d/%Y' %>
+      </td>
+      <td>
+        <%= display_price(variant) %>
+      </td>
+      <td>
+        <%= form_for registry do |f| %>
+          <%= f.number_field :quantity %>
+          <%= f.submit Spree.t('actions.save'), class: 'btn btn-info '  %>
+        <% end %>
+      </td>
+      <td>
+        <%= registry.display_total %>
+      </td>
+    </tr>
+    <% end -%>
+  <% else -%>
+    <tr>
+      <td colspan="6"><%= Spree.t(:your_registry_is_empty) %></td>
+    </tr>
+  <% end -%>
+  </tbody>
+</table>
+<div class="footer_links" data-hook="registry_footer_links">
+<% if @registry.user == spree_current_user %>
+  <%= link_to Spree.t(:create_new_registry), new_registry_path, class: 'btn btn-default' %>
+<% end -%>
+<%= link_to Spree.t(:continue_shopping), products_path, class: 'btn btn-default' %>
+<% if respond_to?(:email_to_friend_url) %>
+  <%= link_to Spree.t('email_to_friend.send_to_friend'), email_to_friend_url('registry', @registry), class: 'btn btn-default' %>
+<% end %>
+</div>

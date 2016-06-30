@@ -1,0 +1,13 @@
+<h1><%= Spree.t(:Create_Registry) %></h1>
+<%= form_for @registry do |f| %>
+  <p><%= f.label :Registry_Name, Spree.t(:Registry_Name) %>:&nbsp;<%= f.text_field :name %></p>
+  <p>Notifications</p>
+  <p>Send Push Notifications</p>
+  <p>Registry Type</p>
+  <p><%= f.check_box :is_private %>&nbsp;<%= f.label :Make_Registry_Public, Spree.t(:Make_Registry_Public) %></p>
+  <p>Fill in Shipping Address</p>
+  <p><%= f.check_box :is_private %>&nbsp;<%= f.label :Keep_Address_Private, Spree.t(:Keep_Address_Private) %></p>
+   <div><%= render partial: 'contacts' %></div>
+  
+  <%= f.submit Spree.t(:create)  %>
+<% end %>

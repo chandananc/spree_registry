@@ -1,0 +1,31 @@
+---
+pt-BR:
+  spree:
+    add_to_registry: Adicionar à lista de desejos
+    are_you_sure_registry: Tem certeza que você deseja excluir esta lista de desejos?
+    availability: Disponibilidade
+    create_new_registry: Criar uma nova lista de desejos
+    creating_registry: Criando lista de desejos
+    date_added: Data adicionada
+    default_registry_name: Minha Lista
+    delete_registry: Apagar lista de desejos
+    edit_registry: Editar
+    editing_registry: Editar lista de desejos
+    in_stock: Em estoque
+    is_default: é o padrão
+    is_private: é privado
+    item_added_to_registry: Item adicionado à lista de desejos
+    item_view: Ver
+    move: Mover
+    move_to_another_registry: Mover para outra lista de desejos
+    my_registries: Minhas listas de desejos
+    private: Privado
+    private_registry: Lista privada
+    public: Público
+    public_registry: Lista pública
+    remove_from_registry: Remover
+    update_quantity: Atualizar quantidade
+    registry_actions: Ações
+    registries: Lista de Desejos
+    your_registry_is_empty: A sua lista está vazia
+    click_link_to_view_registry: 'Clique no link abaixo para visualizar a página %{name}.'

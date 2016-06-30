@@ -1,0 +1,4 @@
+<%= form_for @registry, html: { class: 'ajax_form', id: 'change_registry_accessibility' } do |f| %>
+  <%= f.radio_button :is_private, true %>&nbsp;<%= Spree.t(:private) %>
+  <%= f.radio_button :is_private, false %>&nbsp;<%= Spree.t(:public) %>
+<% end -%>
