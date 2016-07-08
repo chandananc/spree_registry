@@ -2,27 +2,26 @@
 <%= form_for @registry do |f| %>
   <p><%= f.label :Registry_Name, Spree.t(:Registry_Name) %>:&nbsp;<%= f.text_field :name %></p>
   <div>Notifications</div><br>
-    <div class="switch">
+   <div class="switch">
         <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round"  type="checkbox">Send Push Notifications
         <label for="cmn-toggle-1"></label>
       </div><br>
-  <p>Registry Type</p>
+  <p>Registry Type</p> 
   
-  <div class="switch">
+  <!--<div class="switch">
         <input id="cmn-toggle-2" class="cmn-toggle cmn-toggle-round"  type="checkbox">Make Registry Public
         <label for="cmn-toggle-2"></label>
-      </div><br>
-  <p><%# f.check_box :is_private %>&nbsp;<%#= f.label :Make_Registry_Public, Spree.t(:Make_Registry_Public) %></p>
+      </div><br> -->
+  <p><%= f.check_box :is_private %>&nbsp;<%= f.label :Make_Registry_Public, Spree.t(:Make_Registry_Public) %></p>
   <p><b>Fill in Shipping Address</b></p>
   
-  <div class="switch">
+  <!--<div class="switch">
         <input id="cmn-toggle-3" class="cmn-toggle cmn-toggle-round"  type="checkbox">Keep Address Private
         <label for="cmn-toggle-3"></label>
-  </div>
-  <p><%#= f.check_box :is_private %>&nbsp;<%#= f.label :Keep_Address_Private, Spree.t(:Keep_Address_Private) %></p>
+  </div> -->
+  <p><%= f.check_box :is_private %>&nbsp;<%= f.label :Keep_Address_Private, Spree.t(:Keep_Address_Private) %></p>
 
- <%= link_to Spree.t('Invite_Contacts'), contacts_path, class: 'btn btn-default' %>
-   
+   <%= render partial: 'contacts' %>
 
   <%= f.submit Spree.t(:create)  %>
 <% end %>
